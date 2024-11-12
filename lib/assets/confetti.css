@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  cursor: pointer;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: burst 3s ease-out forwards;
+}
+
+@keyframes burst {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  30% {
+    transform: translateY(-150px) translateX(calc(var(--x) * 1px)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(500px) translateX(calc(var(--x) * 3px)) scale(0.5)
+      rotate(calc(var(--rotation) * 360deg));
+  }
+}
